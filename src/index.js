@@ -1,15 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./App.css";
-import Wrap from "./Wrap";
-import Footer from "./Footer";
+import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Wrap />
-    <Footer />
+    <App />
   </React.StrictMode>
 );
 
