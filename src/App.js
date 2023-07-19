@@ -7,7 +7,6 @@ import Footer from "./Footer";
 export default function App() {
   return (
     <div className="App">
-        <p>
       <Wrap />
       <Footer />
     </div>
