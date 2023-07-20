@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import { FaCloud } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.css";
