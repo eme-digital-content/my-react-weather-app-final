@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "./App.css";
 import "./weather-styles.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all.js";
 import axios from "axios";
+import CurrentDay from "./CurrentDay";
 
 export default function Container() {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -23,6 +23,7 @@ export default function Container() {
       humidity: response.data.main.humidity,
       clouds: response.data.clouds.all,
       winds: response.data.wind.speed,
+      date: new Date(response.data.dt * 1000),
     });
   }
 
@@ -34,7 +35,9 @@ export default function Container() {
             <div id="city" className="city">
               {weatherData.city}
             </div>
-            <div id="current-date">Tuesday, February 23. 16:00</div>
+            <div id="current-date">
+              <CurrentDay date={weatherData.date} />
+            </div>
             <div className="city-inner">
               <div className="Temperature">
                 <div className="current-temp">
@@ -102,7 +105,7 @@ export default function Container() {
     );
   } else {
     const apiKey = "f5029b784306910c19746e40c14d6cd3";
-    let city = "Porto Alegre";
+    let city = "Miami";
     let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiURL).then(handleResponse);
 
