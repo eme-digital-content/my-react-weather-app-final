@@ -11,3 +11,56 @@ body {
   background: linear-gradient(to top, #4abdac 0%, #dfdce3 100%);
   font-family: "Lato", sans-serif;
 }
+.container {
+  padding: 15px 15px;
+  margin-top: 25px;
+  background-color: #4abdac;
+  width: 50%;
+  border-radius: 10px;
+}
+
+.Header {
+  text-align: center;
+  font-size: 70px;
+  line-height: 48px;
+  font-weight: 900;
+  margin: 0;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  color: #fc4a1a;
+  font-family: "Pacifico", cursive;
+}
+
+.Footer {
+  text-align: center;
+  font-size: large;
+  background-color: #f7b733;
+  margin-top: 10px;
+}
+
+a {
+  color: #dfdce3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #fc4a1a;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.clouds,
+.humidity,
+.winds {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #f7b733;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 4px auto;
+  padding: 3%;
+}

@@ -5,12 +5,14 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
 import App from "./App";
 
+import Footer from "./Footer";
+
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
     <App />
+    <Footer />
   </StrictMode>
 );
-

@@ -1,8 +1,13 @@
 .WeatherForecast {
+  display: flex;
+  align-items: center;
   text-align: center;
+  justify-content: space-around;
 }
 
-.WeatherForecast-temperature-min {
+.WeatherForecast-temperature-min,
+.min-temp {
   opacity: 0.6;
   margin-left: 5px;
+  color: #fc4a1a;
 }
