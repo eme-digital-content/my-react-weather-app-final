@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import "./weather-styles.css";
-import "bootstrap/dist/css/bootstrap.css";
-import "@fortawesome/fontawesome-free/css/all.css";
-import "@fortawesome/fontawesome-free/js/all.js";
-import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
+import axios from "axios";
+import "./Weather.css";
+import Cities from "./Cities";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -13,18 +12,14 @@ export default function Weather(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
-      maxTemp: response.data.main.temp_max,
-      minTemp: response.data.main.temp_min,
-      city: response.data.name,
-      weatherIcon: response.data.weather[0].icon,
-      weather: response.data.weather[0].main,
-      realFeel: response.data.main.feels_like,
-      weatherAlert: response.data.weather[0].description,
       humidity: response.data.main.humidity,
-      clouds: response.data.clouds.all,
-      winds: response.data.wind.speed,
       date: new Date(response.data.dt * 1000),
+      description: response.data.weather[0].description,
+      icon: response.data.weather[0].icon,
+      wind: response.data.wind.speed,
+      city: response.data.name,
     });
   }
 
@@ -45,26 +40,30 @@ export default function Weather(props) {
 
   if (weatherData.ready) {
     return (
-      <div className="Search">
-        <p className="type-city">Search for a city</p>
+      <div className="Weather">
         <form onSubmit={handleSubmit}>
-          <input
-            className="type-city"
-            type="search"
-            value=""
-            autofocus="on"
-            id="search-input"
-            autocomplete="off"
-            onChange={handleCityChange}
-          />
-          <input
-            className="search"
-            id="search"
-            type="submit"
-            value="Search 🔍"
-          />
+          <div className="row">
+            <div className="col-9">
+              <input
+                type="search"
+                placeholder="Enter a city.."
+                className="form-control"
+                autoFocus="on"
+                onChange={handleCityChange}
+              />
+            </div>
+            <div className="col-3">
+              <input
+                type="submit"
+                value="Search"
+                className="btn btn-primary w-100"
+              />
+            </div>
+          </div>
         </form>
+        <Cities />
         <WeatherInfo data={weatherData} />
+        <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
