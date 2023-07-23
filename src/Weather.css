@@ -21,6 +21,7 @@
   text-align: left;
   border-radius: 6px;
   font-style: bold;
+  margin-bottom: -100px;
 }
 
 .Weather h1 {
@@ -67,6 +68,9 @@
   position: relative;
   line-height: 1;
   top: -34px;
+}
+.Weather form {
+  margin-top: -15px;
 }
 
 @media (max-width: 576px) {
