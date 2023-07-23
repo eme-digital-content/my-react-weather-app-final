@@ -1,15 +1,18 @@
 import React from "react";
+import "./App.css";
 import FormattedDate from "./FormattedDate";
-import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherConditions from "./WeatherConditions";
+import CurrentWeather from "./CurrentWeather";
 
 export default function WeatherInfo(props) {
   return (
     <div className="WeatherInfo">
       <h1>{props.data.city}</h1>
-
-      <FormattedDate date={props.data.date} />
-      <div className="row mt-3">
+      <div className="date">
+        <FormattedDate date={props.data.date} />
+      </div>
+      <div className="row mt-3 justify-content-center">
         <div className="col-3">
           <div className="d-flex">
             <div>
@@ -24,41 +27,23 @@ export default function WeatherInfo(props) {
             </div>
           </div>
         </div>
-        <div class="col-4">
-          <i class="weather-icon" id="icon">
-            <WeatherIcon code={props.data.icon} size={52} />
-          </i>
-          <div className="text-capitalize" class="weather" id="weather">
-            {props.data.description}
-          </div>
-          <div class="realfeel">
-            Feeling <span id="realfeel">30</span>°
-          </div>
-          <div class="weather-alert" id="weather-alert">
-            Alert for Heavy Rain
-          </div>
+        <div class="col-3">
+          <CurrentWeather
+            data={{
+              icon: props.data.icon,
+              description: props.data.description,
+              realFeel: props.data.realFeel,
+            }}
+          />
         </div>
         <div class="col-3">
-          <div class="humidity">
-            <div>
-              🌡️
-              <br />
-              <span id="humidity">77</span> %
-            </div>
-          </div>
-          <div class="clouds">
-            <div>
-              ☁️ <br />
-              <span id="clouds">67</span> %
-            </div>
-          </div>
-          <div class="winds">
-            <div>
-              🍃
-              <br />
-              <span id="winds">9.3</span> m/s
-            </div>
-          </div>
+          <WeatherConditions
+            data={{
+              humidity: props.data.humidity,
+              clouds: props.data.clouds,
+              winds: props.data.winds,
+            }}
+          />
         </div>
       </div>
     </div>

@@ -18,8 +18,13 @@ export default function Weather(props) {
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
-      wind: response.data.wind.speed,
+      winds: response.data.wind.speed,
       city: response.data.name,
+      tempMax: response.data.main.temp_max,
+      tempMin: response.data.main.temp_min,
+      realFeel: response.data.main.feels_like,
+      clouds: response.data.clouds.all,
+      weather: response.data.weather[0].main,
     });
   }
 

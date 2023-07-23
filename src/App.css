@@ -12,16 +12,16 @@ body {
   font-family: "Lato", sans-serif;
 }
 .container {
-  padding: 15px 15px;
   margin-top: 25px;
   background-color: #4abdac;
   width: 50%;
   border-radius: 10px;
+  padding: 0;
 }
 
 .Header {
   text-align: center;
-  font-size: 70px;
+  font-size: 100px;
   line-height: 48px;
   font-weight: 900;
   margin: 0;
@@ -50,17 +50,25 @@ a:hover {
   transition: all 200ms ease-in-out;
 }
 
-.clouds,
-.humidity,
-.winds {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
+.WeatherConditions {
+  width: 120px;
+  height: 80px;
+  border-radius: 10%;
   background: #f7b733;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 4px auto;
-  padding: 3%;
+}
+
+.row mt-3 {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+}
+
+hr {
+  color: #f7b733;
+  border-width: 2px;
 }

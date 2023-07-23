@@ -7,9 +7,10 @@
 
 .Weather {
   font-family: "Lato", sans-serif;
-  padding: 16px;
   border-radius: 4px;
   color: #dfdce3;
+  margin-right: -30px;
+  margin-left: 30px;
 }
 .type-city {
   width: 100%;
@@ -24,8 +25,12 @@
 .Weather h1 {
   font-size: 24px;
   font-weight: 100;
-  margin: 20px 0 0 0;
+  margin: 20px 0 0 20px;
   line-height: 29px;
+}
+
+.date {
+  margin: 0 0 0 20px;
 }
 
 .Weather ul {
@@ -42,7 +47,7 @@
 
 .Weather .temperature {
   font-weight: bold;
-  color: rgb(33, 33, 33);
+  color: #dfdce3;
   font-size: 64px;
   line-height: 64px;
   margin-left: 5px;
@@ -55,7 +60,7 @@
 }
 
 .Weather .unit {
-  color: rgb(33, 33, 33);
+  color: #dfdce3;
   font-size: 16px;
   font-weight: 400;
   position: relative;
