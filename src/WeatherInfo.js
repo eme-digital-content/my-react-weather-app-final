@@ -17,13 +17,6 @@ export default function WeatherInfo(props) {
           <div className="d-flex">
             <div>
               <WeatherTemperature celsius={props.data.temperature} />
-              <hr />
-              <span class="max-temp" id="max-temp">
-                25°
-              </span>
-              <span class="min-temp" id="min-temp">
-                22°
-              </span>
             </div>
           </div>
         </div>
