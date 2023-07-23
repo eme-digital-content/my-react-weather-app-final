@@ -11,10 +11,12 @@ body {
   background: linear-gradient(to top, #4abdac 0%, #dfdce3 100%);
   font-family: "Lato", sans-serif;
 }
+
 .container {
   margin-top: 25px;
   background-color: #4abdac;
-  width: 50%;
+  width: 90%;
+  max-width: 600px;
   border-radius: 10px;
   padding: 0;
 }
@@ -44,13 +46,7 @@ body {
   text-decoration: none;
 }
 
-.author:hover {
-  text-decoration: underline;
-  color: #fc4a1a;
-  cursor: pointer;
-  transition: all 200ms ease-in-out;
-}
-
+.author:hover,
 .repo:hover {
   text-decoration: underline;
   color: #fc4a1a;
@@ -69,11 +65,15 @@ body {
   text-align: center;
 }
 
-.row mt-3 {
+.row {
   display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.WeatherInfo,
+.WeatherForecast {
+  flex-basis: 100%;
 }
 
 hr {
@@ -87,6 +87,26 @@ hr {
   cursor: pointer;
   transition: all 200ms ease-in-out;
 }
+
 .WeatherTemperature a.Fahrenheit.active {
   color: #fc4a1a;
+}
+
+@media (max-width: 576px) {
+  .WeatherTemperature {
+    font-size: 24px;
+  }
+
+  .WeatherConditions {
+    width: 100px;
+    height: 60px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .Cities {
+    display: none;
+  }
 }
