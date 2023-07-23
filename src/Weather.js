@@ -70,7 +70,6 @@ export default function Weather(props) {
         <Cities />
         <WeatherInfo data={weatherData} />
         <br></br>
-        <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
