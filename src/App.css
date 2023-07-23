@@ -88,5 +88,5 @@ hr {
   transition: all 200ms ease-in-out;
 }
 .WeatherTemperature a.Fahrenheit.active {
-  color: red; /* Replace 'red' with your desired fixed color */
+  color: #fc4a1a;
 }
