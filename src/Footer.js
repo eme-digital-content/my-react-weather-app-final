@@ -12,6 +12,7 @@ export default function Footer() {
           href="https://github.com/mbellorin2/my-react-weather-app"
           target="_blank"
           rel="noreferrer"
+          className="repo"
         >
           Open-code project
         </a>{" "}
@@ -24,6 +25,7 @@ export default function Footer() {
             href="https://www.linkedin.com/in/mbellorin2/"
             target="_blank"
             rel="noreferrer"
+            className="author"
           >
             Mariana B.A.
           </a>

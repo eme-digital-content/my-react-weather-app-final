@@ -38,12 +38,20 @@ body {
   margin-top: 10px;
 }
 
-a {
+.author,
+.repo {
   color: #dfdce3;
   text-decoration: none;
 }
 
-a:hover {
+.author:hover {
+  text-decoration: underline;
+  color: #fc4a1a;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.repo:hover {
   text-decoration: underline;
   color: #fc4a1a;
   cursor: pointer;
@@ -71,4 +79,14 @@ a:hover {
 hr {
   color: #f7b733;
   border-width: 2px;
+}
+
+.Fahrenheit {
+  text-decoration: underline;
+  color: #fc4a1a;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+.WeatherTemperature a.Fahrenheit.active {
+  color: red; /* Replace 'red' with your desired fixed color */
 }

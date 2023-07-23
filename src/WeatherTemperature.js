@@ -4,6 +4,7 @@ import "./App.css";
 
 export default function WeatherTemperature(props) {
   const [unit, setUnit] = useState("celsius");
+
   function convertFah(event) {
     event.preventDefault();
     setUnit("fahrenheit");
@@ -13,32 +14,39 @@ export default function WeatherTemperature(props) {
     event.preventDefault();
     setUnit("celsius");
   }
-  if (unit === "celsius") {
-    return (
-      <div className="WeatherTemperature">
-        <span className="temperature">{Math.round(props.celsius)}</span>
-        <span className="unit">
-          {" "}
-          °C |{" "}
-          <a href="/" className="Fahrenheit" onClick={convertFah}>
-            °F
-          </a>
-        </span>
-      </div>
-    );
-  } else {
-    let fahrenheit = (props.celsius * 9) / 5 + 32;
-    return (
-      <div className="WeatherTemperature">
-        <span className="temperature">{Math.round(fahrenheit)}</span>
-        <span className="unit">
-          <a href="/" className="Fahrenheit" onClick={convertCel}>
-            {" "}
-            °C
-          </a>{" "}
-          | °F
-        </span>
-      </div>
-    );
-  }
+
+  return (
+    <div className="WeatherTemperature">
+      <span className="temperature">
+        {unit === "celsius"
+          ? Math.round(props.celsius)
+          : Math.round((props.celsius * 9) / 5 + 32)}
+      </span>
+      <span className="unit">
+        {unit === "celsius" ? (
+          <>
+            °C |{" "}
+            <a
+              href="/"
+              className={`Fahrenheit ${unit === "fahrenheit" ? "active" : ""}`}
+              onClick={convertFah}
+            >
+              °F
+            </a>
+          </>
+        ) : (
+          <>
+            <a
+              href="/"
+              className={`Fahrenheit ${unit === "celsius" ? "active" : ""}`}
+              onClick={convertCel}
+            >
+              °C
+            </a>{" "}
+            | °F
+          </>
+        )}
+      </span>
+    </div>
+  );
 }
