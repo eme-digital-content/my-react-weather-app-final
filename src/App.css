@@ -76,11 +76,6 @@ body {
   flex-basis: 100%;
 }
 
-hr {
-  color: #f7b733;
-  border-width: 2px;
-}
-
 .Fahrenheit {
   text-decoration: underline;
   color: #fc4a1a;
