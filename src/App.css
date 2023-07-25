@@ -123,7 +123,6 @@ form {
 @media (max-width: 576px) {
   .WeatherTemperature {
     font-size: 24px;
-    margin-left: -20px;
   }
 
   .WeatherConditions {
@@ -133,5 +132,9 @@ form {
 
   .row {
     flex-direction: column;
+  }
+
+  .Cities {
+    display: none;
   }
 }
