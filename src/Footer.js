@@ -9,7 +9,7 @@ export default function Footer() {
       <span>
         {" "}
         <a
-          href="https://github.com/eme-digital-content/my-react-weather-app"
+          href="https://https://github.com/eme-digital-content/my-react-weather-app-final"
           target="_blank"
           rel="noreferrer"
           className="repo"
